@@ -29,7 +29,7 @@ Route.get('/gols', async ({request}: HttpContextContract) => {
   let { page, perPage } = request.qs()
   if(!page) page = 1;
   if(!perPage) perPage = 10;
-  return await Gol.query().orderBy('data', 'desc').paginate(page, perPage)
+  return await Gol.query().orderBy('data', 'desc')
 })
 
 Route.get('/gols/:id', async ({ params }) => {
