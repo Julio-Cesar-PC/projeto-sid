@@ -42,6 +42,24 @@ const databaseConfig: DatabaseConfig = {
         password: Env.get('PG_PASSWORD', ''),
         database: Env.get('PG_DB_NAME'),
       },
+      replicas: {
+        read: {
+          connection: [
+            {
+              port: 65314,
+            },
+            {
+              port: 65315,
+            },
+          ]
+        },
+        write: {
+          connection: {
+            port: Env.get('PG_PORT'),
+          },
+        },
+
+      },
       migrations: {
         naturalSort: true,
       },
