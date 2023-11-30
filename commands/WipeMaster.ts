@@ -31,10 +31,17 @@ export default class WipeMaster extends BaseCommand {
     
     await client.connect()
     
-    await client.query(`DROP SCHEMA public CASCADE;`)
+    await client.query(`DROP TABLE gols;`)
+    console.log('Deleted table `gols`')
+
+    await client.query(`DROP TABLE adonis_schema;`)
+    console.log('Deleted table `adonis_schema`')
+
+    await client.query(`DROP TABLE adonis_schema_versions;`)
+    console.log('Deleted table `adonis_schema_versions`')
     
     await client.end()
 
-    console.log('WIPED')
+    console.log('Wiped db')
   }
 }
