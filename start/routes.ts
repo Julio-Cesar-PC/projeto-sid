@@ -20,9 +20,10 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Route from '@ioc:Adonis/Core/Route'
 import Gol from 'App/Models/Gol'
+import Env from '@ioc:Adonis/Core/Env'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return { "node": Env.get('NODE')}
 })
 
 Route.get('/gols', async ({request}: HttpContextContract) => {
