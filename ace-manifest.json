@@ -1,5 +1,17 @@
 {
   "commands": {
+    "db:wipemaster": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/WipeMaster",
+      "commandName": "db:wipemaster",
+      "description": "Comando para fazer uma conexão manual ao banco master para deletar toda a tabela gols.",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",
